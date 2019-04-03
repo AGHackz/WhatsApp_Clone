@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:whatsapp_clone/camera_screen.dart';
-import 'package:whatsapp_clone/chats_screen.dart';
-import 'package:whatsapp_clone/status_screen.dart';
-import 'package:whatsapp_clone/calls_screen.dart';
+import 'package:whatsapp_clone/screens/camera_screen.dart';
+import 'package:whatsapp_clone/screens/chats_screen.dart';
+import 'package:whatsapp_clone/screens/status_screen.dart';
+import 'package:whatsapp_clone/screens/calls_screen.dart';
 
 class WhatsAppHome extends StatefulWidget {
   @override
@@ -43,6 +43,13 @@ class _WhatsAppHomeState extends State<WhatsAppHome>
             )
           ],
         ),
+        actions: <Widget>[
+          Icon(Icons.search),
+          Padding(
+            padding: EdgeInsets.symmetric(horizontal: 4.0),
+          ),
+          Icon(Icons.more_vert)
+        ],
       ),
       body: TabBarView(
         controller: _tabController,
@@ -55,7 +62,7 @@ class _WhatsAppHomeState extends State<WhatsAppHome>
       ),
       floatingActionButton: FloatingActionButton(
         backgroundColor: Theme.of(context).accentColor,
-        child: Icon(Icons.message),
+        child: Icon(Icons.message, color: Colors.white),
         onPressed: () {
           print("Open Contacts");
         },
